@@ -6,11 +6,12 @@ import 'package:graduation_project/layouts/register_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/register_layout/cubit/states.dart';
 import 'package:lottie/lottie.dart';
 
+import '../../../screens/other/complaints_screen/dart/dart.dart';
 import '../../../shared/styles/colors.dart';
 import '../../../shared/widgets/widgets.dart';
 
 class RegisterLayout extends StatelessWidget {
-   RegisterLayout({Key? key}) : super(key: key);
+  RegisterLayout({Key? key}) : super(key: key);
 
   var emailCotroller = TextEditingController();
   var passwordCotroller = TextEditingController();
@@ -46,10 +47,9 @@ class RegisterLayout extends StatelessWidget {
               ShowToast(text: state.registerModel!.message.toString());
             }
           }
-        }else if (state is RegisterErrorUserState){
+        } else if (state is RegisterErrorUserState) {
           ShowToast(text: "خطأ في الإتصال");
         }
-
       },
       builder: (context, state) {
         var cubit = RegisterCubit.get(context);
@@ -116,9 +116,7 @@ class RegisterLayout extends StatelessWidget {
                           Icons.lock,
                         ),
                         suffixIcon: IconButton(
-                          icon: Icon(
-                            cubit.confirmSuffix
-                          ),
+                          icon: Icon(cubit.confirmSuffix),
                           onPressed: () {
                             cubit.changeConfirmPasswordVisibility();
                           },
@@ -147,6 +145,25 @@ class RegisterLayout extends StatelessWidget {
                         inputType: TextInputType.number,
                       ),
                       const SizedBox(height: 15),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (ctx) => ComplaintsScreen(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          "مشكلة في التسجيل؟",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: secondaryColor,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
                       ConditionalBuilder(
                         condition: state is! RegisterLoadingUserState,
                         builder: (context) => Container(
@@ -161,7 +178,8 @@ class RegisterLayout extends StatelessWidget {
                               RegisterCubit.get(context).userRegister(
                                   email: emailCotroller.text,
                                   password: passwordCotroller.text,
-                                  confirmPassword: confirmPasswordCotroller.text,
+                                  confirmPassword:
+                                      confirmPasswordCotroller.text,
                                   unionNumber: unionCotroller.text,
                                   ssn: ssnCotroller.text);
                             },
@@ -177,9 +195,8 @@ class RegisterLayout extends StatelessWidget {
                         fallback: (context) {
                           return const Center(
                               child: CircularProgressIndicator(
-                                color: secondaryColor,
-
-                              ));
+                            color: secondaryColor,
+                          ));
                         },
                       ),
                       const SizedBox(height: 15),
@@ -198,7 +215,7 @@ class RegisterLayout extends StatelessWidget {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (ctx) =>  LoginLayout(),
+                                  builder: (ctx) => LoginLayout(),
                                 ),
                               );
                             },

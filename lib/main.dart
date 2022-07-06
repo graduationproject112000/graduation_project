@@ -46,8 +46,6 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const SplashLayout(),
-        // ExtractionServiceLayout(),
-
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'DefaultFont',
