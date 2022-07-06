@@ -159,7 +159,12 @@ class ServiceFormLayout extends StatelessWidget {
                                                 ? 'services/update/'
                                                 : 'services/store/',
                                           );
-                                        } else {
+                                          break;
+                                        } else if (i ==
+                                            ServiceFormCubit.get(context)
+                                                    .texts
+                                                    .length -
+                                                1) {
                                           ShowToast(
                                             text:
                                                 "يرجي رفع صورة واحدة علي الاقل للتعديل",
