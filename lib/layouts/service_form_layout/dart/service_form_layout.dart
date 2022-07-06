@@ -46,12 +46,14 @@ class ServiceFormLayout extends StatelessWidget {
               ShowToast(
                 text: ServiceFormCubit.get(context).startServiceMessage,
               );
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomeLayout(2),
-                ),
-              );
+              isUpdate
+                  ? Navigator.pop(context)
+                  : Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeLayout(2),
+                      ),
+                    );
             }
           }
         },
@@ -159,8 +161,9 @@ class ServiceFormLayout extends StatelessWidget {
                                           );
                                         } else {
                                           ShowToast(
-                                              text:
-                                                  "يرجي رفع صورة واحدة علي الاقل للتعديل");
+                                            text:
+                                                "يرجي رفع صورة واحدة علي الاقل للتعديل",
+                                          );
                                         }
                                       }
                                     }

@@ -47,7 +47,6 @@ class HomeCubit extends Cubit<HomeStates> {
   ];
 
   void changeBottomBar(index) {
-    print(index.toString());
     currentIndex = index;
     emit(HomeBottomNavigationChangeState());
   }

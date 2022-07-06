@@ -69,7 +69,6 @@ class ServiceFormCubit extends Cubit<ServiceFormStates> {
   }
 
   void changeFile(pickedFile, index) {
-    print("jdkfhskhfkshfkshhshks");
     images[index] = File(pickedFile.path);
     var fileName = (pickedFile.path.split('/').last);
     texts[index] = fileName;
