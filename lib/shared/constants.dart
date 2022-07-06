@@ -1,0 +1,2 @@
+ String? token;
+ int? unionId;

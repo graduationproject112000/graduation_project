@@ -1,0 +1,50 @@
+{
+  "النقابات": {
+    "نقابة الصيادلة": [
+      {
+        "title":"تجديد عضوية",
+        "icon":"assets/images/card_id.gif"
+      },
+      {
+        "title":"إعانة العلاج الشهرى",
+        "icon":"assets/images/drugs.gif"
+      },
+      {
+        "title":"إعانة مصاريف المدارس والجامعات",
+        "icon":"assets/images/univercity.gif"
+      },
+      {
+        "title":"إعانة الأمراض المستعصية أو النفسية أو المزمنة",
+        "icon":"assets/images/patient.gif"
+      },
+      {
+        "title":"إعانة ظروف حبس احتياطى",
+        "icon":"assets/images/help_hand.gif"
+      },
+      {
+        "title":"استخراج شهادة إخلاء طرف",
+        "icon":"assets/images/certification.gif"
+      },
+      {
+        "title":"استخراج شهادة خبرة من إدارة الصيدلة",
+        "icon":"assets/images/certification.gif"
+      },
+      {
+        "title":"إعانة تجنيد",
+        "icon":"assets/images/help_hand.gif"
+      },
+      {
+        "title":"استخراج ترخيص مزاولة المهنة",
+        "icon":"assets/images/licence.gif"
+      },
+      {
+        "title":"فتح صيدلية",
+        "icon":"assets/images/open_pharmacy.gif"
+      },
+      {
+        "title":"نقل ملكية صيدلية",
+        "icon":"assets/images/pharmact_transfer.gif"
+      }
+    ]
+  }
+}

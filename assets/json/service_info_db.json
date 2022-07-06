@@ -1,0 +1,593 @@
+{
+  "النقابات": {
+    "الصيدلة": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+      "اعانة العلاج الشهري": [
+        "report",
+        "personal_card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة مصاريف المدارس والجامعات": [
+        "birth",
+        "edu_certificate",
+        "salary",
+        "receipt",
+        "cost"
+      ],
+      "اعانة الامراض المزمنة": [
+        "report",
+        "receipt",
+        "cost"
+      ],
+      "اعانة ظروف حبس احتياطي": [
+        "police_certificae",
+        "wedding",
+        "receipt",
+        "cost"
+      ],
+      "استخراج شهادة إخلاء طرف": [
+        "health",
+        "card",
+        "attorney",
+        "cost"
+      ],
+      "استخراج شهادة خبرة من إدارة الصيدلة": [
+        "personal_card",
+        "card",
+        "License",
+        "recruitment",
+        "assignment",
+        "statement",
+        "movements",
+        "cost"
+      ],
+      "اعانة تجنيد": [
+        "recruitment",
+        "army_card",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "استخراج ترخيص مزاولة المهنة": [
+        "personal_card",
+        "card",
+        "license",
+        "personal",
+        "passport",
+        "cost"
+      ],
+      "فتح صيدلية": [
+        "فيش باسم مدرية الصحة",
+        "شهادة ميلاد",
+        "رسم هندسي",
+        "طلب فتح صيدليه من مدرية الصحة",
+        "صورة البطاقة الشخصية",
+        "صوره كارنية النقابة",
+        "ترخيص مزاوله المهنة",
+        "صوره التجنيد",
+        "صوره الغاء التكليف",
+        "افادة من جهة العمل ب استلام العمل",
+        "شهاده تحركات الصحة",
+        "شهادة بعدم امتلاك اكثرمن صيدليه",
+        "موافقة اللجنة النقابية",
+        "صوره عقد ايجار موثق",
+        "صوره للصيدلية",
+        "صوره الموافقة من المعاينة الاوله للصحة",
+        "صوره من الشهادة الاداريه بالمنيل",
+        "صوره سداد اشتراك النقابة",
+        "صوره شخصيه",
+        "اقرار بادارة الصيدلية من الصحة",
+        "صوره ايصال الدفع"
+      ],
+      "نقل ملكية صيدلية": [
+        "شهادة بعدم امتلاك اكثر من صيدلية",
+        "فيش باسم مدرية الصحة",
+        "شهادة ميلاد",
+        "صورة البطاقة الشخصية",
+        "صوره كارنية النقابة",
+        "ترخيص مزاوله المهنه",
+        "صورة التجنيد",
+        "صورة الغاء التكليف",
+        "شهادة بعدم إمتلاك اكثر من صيدلية",
+        "توكيل في حاله عدم وجود صيدلي",
+        "عقد البيع",
+        "الرخصة الصيدلية",
+        "التنازل عن الرخصة",
+        "صوره كارنية المتنازل عن الملكية",
+        "صوره كارنية المالك الجديد",
+        "افادة من جهة العمل بالمدة التي قضاها في التكليف",
+        "موافقة اللجنة النقابية بالمركز",
+        "صورة عقد ايجار موثق",
+        "صورة للصيدلية",
+        "صورة سداد اشتراك النقابة",
+        "صورة التنازل عن عداد المياه والكهرباء",
+        "موافقة النقابة الفرعيه علي نقل الملكية",
+        "صوره شخصية",
+        "صوره ايصال الدفع"
+      ]
+    },
+    "الاسنان": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+      "اعانة العلاج الشهري": [
+        "report",
+        "personal_card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة مصاريف المدارس والجامعات": [
+        "birth",
+        "edu_certificate",
+        "salary",
+        "receipt",
+        "cost"
+      ],
+      "اعانة الامراض المزمنة": [
+        "report",
+        "receipt",
+        "cost"
+      ],
+      "اعانة ظروف حبس احتياطي": [
+        "police_certificae",
+        "wedding",
+        "receipt",
+        "cost"
+      ],
+      "اعانة تجنيد": [
+        "recruitment",
+        "army_card",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "استخراج ترخيص مزاولة المهنة": [
+        "model",
+        "graduation",
+        "excellence",
+        "birth",
+        "personal",
+        "fesh",
+        "situation",
+        "receipt",
+        "certificate",
+        "cost"
+      ]
+    },
+    "طب بشري": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+      "اعانة العلاج الشهري": [
+        "report",
+        "personal_card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة مصاريف المدارس والجامعات": [
+        "birth",
+        "edu_certificate",
+        "salary",
+        "receipt",
+        "cost"
+      ],
+      "اعانة الامراض المزمنة": [
+        "report",
+        "receipt",
+        "cost"
+      ],
+      "اعانة ظروف حبس احتياطي": [
+        "police_certificae",
+        "wedding",
+        "receipt",
+        "cost"
+      ],
+      "اعانة تجنيد": [
+        "recruitment",
+        "army_card",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "استخراج كارنية استشاري": [
+        "receipt",
+        "temporary",
+        "cost"
+      ],
+      "استخراج كارنية أخصائي": [
+        "receipt",
+        "master",
+        "cost"
+      ],
+      "تسجيل عيادة خاصة": [
+        "contract",
+        "certificate",
+        "card",
+        "building",
+        "recipe",
+        "device",
+        "purchase",
+        "license",
+        "cost"
+      ]
+    },
+    "طب بطري": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+      "اعانة العلاج الشهري": [
+        "report",
+        "personal_card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة مصاريف المدارس والجامعات": [
+        "birth",
+        "edu_certificate",
+        "salary",
+        "receipt",
+        "cost"
+      ],
+      "اعانة الامراض المزمنة": [
+        "report",
+        "receipt",
+        "cost"
+      ],
+      "اعانة ظروف حبس احتياطي": [
+        "police_certificae",
+        "wedding",
+        "receipt",
+        "cost"
+      ],
+      "اعانة تجنيد": [
+        "recruitment",
+        "army_card",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "القيد بسجل العيادات البيطرية": [
+        "contract",
+        "engineer",
+        "receipt",
+        "tax_card",
+        "approval",
+        "presonal",
+        "cost"
+      ],
+      "القيد بجدول غير المشتغلين": [
+        "disclaimer",
+        "fulltime",
+        "card",
+        "personal_card",
+        "ministry",
+        "endServ",
+        "brent",
+        "insurance",
+        "cost"
+      ],
+      "القيد بجدول الاخصائيين": [
+        "registration",
+        "personal_card",
+        "card",
+        "specialty",
+        "personal",
+        "receipt",
+        "experience",
+        "fellowship",
+        "Professional",
+        "cost"
+      ]
+    },
+    "المعلمين ": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+
+      "اعانة الجراحة": [
+        "hospital",
+        "report",
+        "personal_card",
+        "card",
+        "receipt",
+        "birth",
+        "wedding",
+        "cost"
+      ],
+      "اعانة الوفاة": [
+        "death",
+        "funeral",
+        "personal_card",
+        "card",
+        "cost"
+      ],
+      "الاعانة الصحية": [
+        "personal_card",
+        "card",
+        "report",
+        "benefits",
+        "newspaper",
+        "hospital",
+        "cost"
+      ],
+      "مشروع التكافل العلاجي": [
+        "card",
+        "personal_card",
+        "childrens",
+        "wedding",
+        "childrenspersonal",
+        "cost"
+      ],
+      "اعانة الوضع": [
+        "hospital",
+        "report",
+        "childs",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة العلاج بفواتير": [
+        "project",
+        "hospitalcost",
+        "report",
+        "hospital",
+        "receipt",
+        "cost"
+      ],
+      "إعانة عجز كلى أو جزئى": [
+        "medical",
+        "personal_card",
+        "receipt",
+        "cost"
+      ]
+    },
+    "المحامين": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+
+      "اعانة الجراحة": [
+        "hospital",
+        "report",
+        "personal_card",
+        "card",
+        "receipt",
+        "birth",
+        "wedding",
+        "cost"
+      ],
+      "اعانة الوفاة": [
+        "death",
+        "funeral",
+        "personal_card",
+        "card",
+        "cost"
+      ],
+      "الاعانة الصحية": [
+        "personal_card",
+        "card",
+        "report",
+        "cost"
+      ],
+      "مشروع التكافل العلاجي": [
+        "card",
+        "personal_card",
+        "childrens",
+        "wedding",
+        "childrenspersonal",
+        "cost"
+      ],
+      "اعانة الوضع": [
+        "hospital",
+        "report",
+        "childs",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة العلاج بفواتير": [
+        "project",
+        "hospitalcost",
+        "report",
+        "hospital",
+        "receipt",
+        "cost"
+      ],
+      "إعانة عجز كلى أو جزئى": [
+        "medical",
+        "personal_card",
+        "receipt",
+        "cost"
+      ]
+    },
+    "المهن الرباضية": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+
+      "اعانة الجراحة": [
+        "hospital",
+        "report",
+        "personal_card",
+        "card",
+        "receipt",
+        "birth",
+        "wedding",
+        "cost"
+      ],
+      "اعانة الوفاة": [
+        "death",
+        "funeral",
+        "personal_card",
+        "card",
+        "cost"
+      ],
+      "الاعانة الصحية": [
+        "personal_card",
+        "card",
+        "report",
+        "cost"
+      ],
+      "مشروع التكافل العلاجي": [
+        "card",
+        "personal_card",
+        "childrens",
+        "wedding",
+        "childrenspersonal",
+        "cost"
+      ],
+      "اعانة الوضع": [
+        "hospital",
+        "report",
+        "childs",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة العلاج بفواتير": [
+        "project",
+        "hospitalcost",
+        "report",
+        "hospital",
+        "receipt",
+        "cost"
+      ],
+      "إعانة عجز كلى أو جزئى": [
+        "medical",
+        "personal_card",
+        "receipt",
+        "cost"
+      ]
+    },
+    "المهندسين": {
+      "تجديد عضوية": [
+        "card",
+        "personal_card",
+        "cost"
+      ],
+      "استخراج بدل فائد للكارنية": [
+        "card",
+        "personal_card",
+        "recept",
+        "cost"
+      ],
+
+      "اعانة الجراحة": [
+        "hospital",
+        "report",
+        "personal_card",
+        "card",
+        "receipt",
+        "birth",
+        "wedding",
+        "cost"
+      ],
+      "اعانة الوفاة": [
+        "death",
+        "funeral",
+        "personal_card",
+        "card",
+        "cost"
+      ],
+      "الاعانة الصحية": [
+        "personal_card",
+        "card",
+        "report",
+        "cost"
+      ],
+      "مشروع التكافل العلاجي": [
+        "card",
+        "personal_card",
+        "childrens",
+        "wedding",
+        "childrenspersonal",
+        "cost"
+      ],
+      "اعانة الوضع": [
+        "hospital",
+        "report",
+        "childs",
+        "card",
+        "receipt",
+        "cost"
+      ],
+      "اعانة العلاج بفواتير": [
+        "project",
+        "hospitalcost",
+        "report",
+        "hospital",
+        "receipt",
+        "cost"
+      ],
+      "إعانة عجز كلى أو جزئى": [
+        "medical",
+        "personal_card",
+        "receipt",
+        "cost"
+      ],
+      "استخراج شهاده الاشراف": [
+        "license",
+        "cost"
+      ]
+    }
+  }
+}
