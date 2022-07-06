@@ -132,8 +132,8 @@ class SettingsLayout extends StatelessWidget {
                                     prefix: Icons.email,
                                     isRead: true,
                                     suffix: Icons.edit,
-                                    suffixPressed: () {
-                                      Navigator.pushReplacement(context,
+                                    suffixPressed: () async{
+                                      emailController.text = await Navigator.push(context,
                                           MaterialPageRoute(builder: (context) {
                                         return EditEmailLayout();
                                       }));
@@ -162,22 +162,7 @@ class SettingsLayout extends StatelessWidget {
                                           )
                                         : const SizedBox(height: 15)
                                     : const SizedBox(height: 15),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    const SizedBox(width: 15),
-                                    const Expanded(
-                                        child: Text(
-                                      "يرجي تأكيد حسابك",
-                                      style: TextStyle(color: Colors.red),
-                                    )),
-                                    TextButton(
-                                      onPressed: () {},
-                                      child: const Text("ارسال الرابط"),
-                                    ),
-                                  ],
-                                ),
-                                // :const SizedBox.shrink(),
+
                                 defaultFormField(
                                     controller: phoneController,
                                     type: TextInputType.phone,
@@ -186,17 +171,15 @@ class SettingsLayout extends StatelessWidget {
                                     prefix: Icons.phone,
                                     isRead: true,
                                     suffix: Icons.edit,
-                                    suffixPressed: () {
-                                      Navigator.pushReplacement(
+                                    suffixPressed: () async {
+                                      phoneController.text = await Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) {
                                             return EditPhoneLayout();
                                           },
                                         ),
-                                      ).then((value) {
-                                        SettingCubit().getUserInfo();
-                                      });
+                                      );
                                     }),
                                 const SizedBox(height: 15),
                                 defaultFormField(

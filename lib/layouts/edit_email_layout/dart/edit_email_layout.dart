@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graduation_project/layouts/settings_layout/dart/settings_layout.dart';
 
 import '../../../shared/styles/colors.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -20,10 +19,7 @@ class EditEmailLayout extends StatelessWidget {
         if (state is ChangeEmailLSuccessState) {
           if (state.status == true) {
             ShowToast(text: state.message);
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-                  return SettingsLayout();
-                }));
+            Navigator.pop(context, emailController.text);
           }
         }
       },

@@ -20,10 +20,7 @@ class EditPhoneLayout extends StatelessWidget {
         if (state is ChangePhoneSuccessState) {
           if (state.status == true) {
             ShowToast(text: state.message);
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-                  return SettingsLayout();
-                }));
+            Navigator.pop(context, phoneController.text);
           }
         }
       },

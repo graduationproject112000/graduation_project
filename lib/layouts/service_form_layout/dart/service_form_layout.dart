@@ -43,7 +43,6 @@ class ServiceFormLayout extends StatelessWidget {
         listener: (context, state) {
           if (state is ServiceFormSuccessStartServiceState) {
             if (state.updateState) {
-              print("object + true + ${state.updateState}");
               ShowToast(
                 text: ServiceFormCubit.get(context).startServiceMessage,
               );
@@ -52,11 +51,6 @@ class ServiceFormLayout extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => HomeLayout(2),
                 ),
-              );
-            } else {
-              print("object + false + ${state.updateState}");
-              ShowToast(
-                text: ServiceFormCubit.get(context).startServiceMessage,
               );
             }
           }
