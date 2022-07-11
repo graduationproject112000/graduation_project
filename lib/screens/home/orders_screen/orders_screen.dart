@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 
@@ -61,24 +62,31 @@ class OrdersScreen extends StatelessWidget {
                                           builder: (BuildContext context) {
                                             return AlertDialog(
                                               content: SingleChildScrollView(
-                                                child: ListBody(
-                                                  children: <Widget>[
-                                                    Text(direction ==
-                                                            DismissDirection
-                                                                .endToStart
-                                                        ? 'هل انت متأكد أنك تريد حذف هذه الخدمة؟'
-                                                        : "هل انت متأكد أنك تريد تعديل هذه الخدمة؟"),
-                                                  ],
+                                                child: Text(
+                                                  direction ==
+                                                          DismissDirection
+                                                              .endToStart
+                                                      ? 'هل انت متأكد أنك تريد حذف هذه الخدمة؟'
+                                                      : "هل انت متأكد أنك تريد تعديل هذه الخدمة؟",
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
                                               actions: <Widget>[
-                                                TextButton(
+                                                MaterialButton(
                                                   child: const Text('إلغاء'),
                                                   onPressed: () {
                                                     Navigator.of(context).pop();
                                                   },
+                                                  color: Colors.red,
+                                                  textColor: Colors.white,
+                                                  minWidth: 140,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
                                                 ),
-                                                TextButton(
+                                                MaterialButton(
                                                   child: const Text('نعم'),
                                                   onPressed: () {
                                                     if (direction ==
@@ -120,6 +128,14 @@ class OrdersScreen extends StatelessWidget {
                                                       );
                                                     }
                                                   },
+                                                  color: secondaryColor,
+                                                  textColor: Colors.white,
+                                                  minWidth: 140,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
                                                 ),
                                               ],
                                             );
@@ -179,214 +195,245 @@ class OrdersScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      child: Container(
-                                        // padding: EdgeInsets.symmetric(
-                                        //   horizontal: MediaQuery.of(context).size.width *
-                                        //       (MediaQuery.of(context).orientation ==
-                                        //               Orientation.landscape
-                                        //           ? 4
-                                        //           : 10 / 375.0),
-                                        // ),
-                                        width: MediaQuery.of(context)
-                                                    .orientation ==
-                                                Orientation.landscape
-                                            ? MediaQuery.of(context)
-                                                    .size
-                                                    .width /
-                                                2
-                                            : MediaQuery.of(context).size.width,
-                                        margin: EdgeInsets.only(
-                                            bottom: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                (12 / 812.0)),
-                                        child: Card(
-                                          elevation: 10,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          child: Container(
-                                            padding: const EdgeInsets.all(8),
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(16),
-                                                color: Colors.white),
-                                            child: Row(
-                                              children: [
-                                                Expanded(
-                                                  child: SingleChildScrollView(
-                                                    child: Column(
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Row(
-                                                          textBaseline:
-                                                              TextBaseline
-                                                                  .alphabetic,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            const Icon(
-                                                              Icons.arrow_right,
-                                                              size: 30,
-                                                            ),
-                                                            Expanded(
-                                                              child: Padding(
+                                      child:
+                                          AnimationConfiguration.staggeredList(
+                                        position: index,
+                                        duration:
+                                            const Duration(milliseconds: 1375),
+                                        child: SlideAnimation(
+                                          horizontalOffset: 300,
+                                          child: FadeInAnimation(
+                                            child: Container(
+                                              // padding: EdgeInsets.symmetric(
+                                              //   horizontal: MediaQuery.of(context).size.width *
+                                              //       (MediaQuery.of(context).orientation ==
+                                              //               Orientation.landscape
+                                              //           ? 4
+                                              //           : 10 / 375.0),
+                                              // ),
+                                              width: MediaQuery.of(context)
+                                                          .orientation ==
+                                                      Orientation.landscape
+                                                  ? MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      2
+                                                  : MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                              margin: EdgeInsets.only(
+                                                  bottom: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      (12 / 812.0)),
+                                              child: Card(
+                                                elevation: 10,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
+                                                ),
+                                                child: Container(
+                                                  padding:
+                                                      const EdgeInsets.all(8),
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16),
+                                                      color: Colors.white),
+                                                  child: Row(
+                                                    children: [
+                                                      Expanded(
+                                                        child:
+                                                            SingleChildScrollView(
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Row(
+                                                                textBaseline:
+                                                                    TextBaseline
+                                                                        .alphabetic,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .start,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  const Icon(
+                                                                    Icons
+                                                                        .arrow_right,
+                                                                    size: 30,
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          top:
+                                                                              4),
+                                                                      child:
+                                                                          Text(
+                                                                        cubit
+                                                                            .userOrder
+                                                                            .data[index]
+                                                                            .namear
+                                                                            .toString(),
+                                                                        maxLines:
+                                                                            2,
+                                                                        overflow:
+                                                                            TextOverflow.ellipsis,
+                                                                        style:
+                                                                            const TextStyle(
+                                                                          fontSize:
+                                                                              16,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          color:
+                                                                              Colors.black,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              const SizedBox(
+                                                                height: 5,
+                                                              ),
+                                                              Padding(
                                                                 padding:
                                                                     const EdgeInsets
                                                                             .only(
-                                                                        top: 4),
+                                                                        right:
+                                                                            15),
+                                                                child: Row(
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .access_time_rounded,
+                                                                      color: Colors
+                                                                              .grey[
+                                                                          500],
+                                                                      size: 18,
+                                                                    ),
+                                                                    const SizedBox(
+                                                                      width: 12,
+                                                                    ),
+                                                                    Text(
+                                                                      DateFormat.yMMMd().format(DateTime.parse(cubit
+                                                                          .userOrder
+                                                                          .data[
+                                                                              index]
+                                                                          .pivot!
+                                                                          .createdAt
+                                                                          .toString())),
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            13,
+                                                                        color: Colors
+                                                                            .grey[500],
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              const SizedBox(
+                                                                height: 12,
+                                                              ),
+                                                              const Padding(
+                                                                padding: EdgeInsets
+                                                                    .only(
+                                                                        right:
+                                                                            15),
                                                                 child: Text(
-                                                                  cubit
-                                                                      .userOrder
-                                                                      .data[
-                                                                          index]
-                                                                      .namear
-                                                                      .toString(),
-                                                                  maxLines: 2,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
+                                                                  'ملاحظات الطلب :',
                                                                   style:
-                                                                      const TextStyle(
+                                                                      TextStyle(
                                                                     fontSize:
-                                                                        16,
+                                                                        13,
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .bold,
+                                                                            .w600,
                                                                     color: Colors
                                                                         .black,
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        const SizedBox(
-                                                          height: 5,
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .only(
-                                                                  right: 15),
-                                                          child: Row(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
-                                                            children: [
-                                                              Icon(
-                                                                Icons
-                                                                    .access_time_rounded,
-                                                                color: Colors
-                                                                    .grey[500],
-                                                                size: 18,
-                                                              ),
-                                                              const SizedBox(
-                                                                width: 12,
-                                                              ),
-                                                              Text(
-                                                                DateFormat
-                                                                        .yMMMd()
-                                                                    .format(DateTime.parse(cubit
-                                                                        .userOrder
-                                                                        .data[
-                                                                            index]
-                                                                        .pivot!
-                                                                        .createdAt
-                                                                        .toString())),
-                                                                style:
-                                                                    TextStyle(
-                                                                  fontSize: 13,
-                                                                  color: Colors
-                                                                          .grey[
-                                                                      500],
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsets
+                                                                            .only(
+                                                                        right:
+                                                                            20),
+                                                                child: Text(
+                                                                  cubit
+                                                                      .userOrder
+                                                                      .data[
+                                                                          index]
+                                                                      .pivot!
+                                                                      .message
+                                                                      .toString(),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontSize:
+                                                                        13,
+                                                                    color: Colors
+                                                                            .grey[
+                                                                        500],
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
                                                         ),
-                                                        const SizedBox(
-                                                          height: 12,
-                                                        ),
-                                                        const Padding(
-                                                          padding:
-                                                              EdgeInsets.only(
-                                                                  right: 15),
-                                                          child: Text(
-                                                            'ملاحظات الطلب :',
-                                                            style: TextStyle(
-                                                              fontSize: 13,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                              color:
-                                                                  Colors.black,
-                                                            ),
+                                                      ),
+                                                      Container(
+                                                        margin: const EdgeInsets
+                                                                .symmetric(
+                                                            horizontal: 10),
+                                                        height: 85,
+                                                        width: 0.7,
+                                                        color: Colors.grey[600],
+                                                      ),
+                                                      RotatedBox(
+                                                        quarterTurns: 3,
+                                                        child: Text(
+                                                          cubit
+                                                                      .userOrder
+                                                                      .data[
+                                                                          index]
+                                                                      .pivot!
+                                                                      .status
+                                                                      .toString() ==
+                                                                  "جاري مراجعة البيانات"
+                                                              ? 'تحت المراجعة'
+                                                              : cubit
+                                                                  .userOrder
+                                                                  .data[index]
+                                                                  .pivot!
+                                                                  .status
+                                                                  .toString(),
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Colors.black,
                                                           ),
                                                         ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .only(
-                                                                  right: 20),
-                                                          child: Text(
-                                                            cubit
-                                                                .userOrder
-                                                                .data[index]
-                                                                .pivot!
-                                                                .message
-                                                                .toString(),
-                                                            textAlign: TextAlign
-                                                                .center,
-                                                            style: TextStyle(
-                                                              fontSize: 13,
-                                                              color: Colors
-                                                                  .grey[500],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
-                                                Container(
-                                                  margin: const EdgeInsets
-                                                          .symmetric(
-                                                      horizontal: 10),
-                                                  height: 80,
-                                                  width: 0.5,
-                                                  color: Colors.grey[400],
-                                                ),
-                                                RotatedBox(
-                                                  quarterTurns: 3,
-                                                  child: Text(
-                                                    cubit.userOrder.data[index]
-                                                                .pivot!.status
-                                                                .toString() ==
-                                                            "جاري مراجعة البيانات"
-                                                        ? 'تحت المراجعة'
-                                                        : cubit
-                                                            .userOrder
-                                                            .data[index]
-                                                            .pivot!
-                                                            .status
-                                                            .toString(),
-                                                    style: const TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Colors.black,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
                                             ),
                                           ),
                                         ),

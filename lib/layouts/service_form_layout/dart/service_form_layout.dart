@@ -123,7 +123,7 @@ class ServiceFormLayout extends StatelessWidget {
                                 );
                               },
                               separatorBuilder: (context, index) =>
-                                  const SizedBox(height: 15),
+                                  const SizedBox(height: 10),
                               itemCount: cubit.serviceInformation!.length,
                             ),
                             const SizedBox(height: 30),

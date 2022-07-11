@@ -52,6 +52,8 @@ dependencies:
   smooth_page_indicator:
   carousel_indicator:
   webview_flutter:
+  flutter_staggered_animations:
+
 
 
 

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/layouts/settings_layout/dart/settings_layout.dart';
 import 'package:graduation_project/shared/widgets/widgets.dart';
+
 import '../../../shared/styles/colors.dart';
 import '../../../shared/styles/text_styles.dart';
 import '../../service_form_layout/dart/service_form_layout.dart';
@@ -16,6 +17,8 @@ class ServiceInformationLayout extends StatelessWidget {
   final unionName;
   final serviceId;
   final serviceCost;
+  final String bankNumber;
+  final String phone;
 
   const ServiceInformationLayout({
     Key? key,
@@ -24,6 +27,8 @@ class ServiceInformationLayout extends StatelessWidget {
     required this.unionName,
     required this.serviceId,
     required this.serviceCost,
+    required this.bankNumber,
+    required this.phone,
   }) : super(key: key);
 
   @override
@@ -63,7 +68,7 @@ class ServiceInformationLayout extends StatelessWidget {
                           actions: <Widget>[
                             MaterialButton(
                               child: const Text('أوافق'),
-                              color: mainColor,
+                              color: secondaryColor,
                               textColor: Colors.white,
                               onPressed: () {
                                 Navigator.of(context).pop();
@@ -74,31 +79,43 @@ class ServiceInformationLayout extends StatelessWidget {
                                   ),
                                 );
                               },
+                              minWidth: double.infinity,
                             ),
                           ],
                         )
                       : AlertDialog(
                           //title: const Text('AlertDialog Title'),
-                          content: Text(
-                            state.message,
-                            style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
+                          content: const Text(
+                            "قد قمت بطلب هذه الخدمة من قبل يرجي إلغاء الطلب القديم.!",
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w400),
                             textDirection: TextDirection.rtl,
+                            textAlign: TextAlign.center,
                           ),
 
                           actions: <Widget>[
                             MaterialButton(
-                              child: const Text('إلغاء'),
+                              child: const Text(
+                                'إلغاء',
+                              ),
                               color: Colors.red,
                               textColor: Colors.white,
+                              minWidth: 140,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
                             ),
                             MaterialButton(
-                              child: const Text('حذف'),
+                              child: const Text('حذف الطلب'),
                               color: mainColor,
                               textColor: Colors.white,
+                              minWidth: 140,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
                               onPressed: () {
                                 Navigator.of(context).pop();
                                 ServiceInformationCubit.get(context)
@@ -184,7 +201,8 @@ class ServiceInformationLayout extends StatelessWidget {
                           padding: const EdgeInsets.only(right: 30.0),
                           child: Text(
                             "$description",
-                            style: const TextStyle(fontSize: 18),
+                            style: const TextStyle(
+                                fontSize: 18, color: Colors.black54),
                           ),
                         ),
                         Container(
@@ -214,7 +232,8 @@ class ServiceInformationLayout extends StatelessWidget {
                               padding: const EdgeInsets.only(right: 30.0),
                               child: Text(
                                 "- ${ServiceInformationCubit.get(context).serviceInformation![index]} ",
-                                style: const TextStyle(fontSize: 18),
+                                style: const TextStyle(
+                                    fontSize: 18, color: Colors.black54),
                               ),
                             );
                           },
@@ -237,7 +256,7 @@ class ServiceInformationLayout extends StatelessWidget {
                               size: 30,
                             ),
                             Text(
-                              "التكلفة",
+                              "الرسوم",
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -247,9 +266,41 @@ class ServiceInformationLayout extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 30.0),
-                          child: Text(
-                            serviceCost,
-                            style: const TextStyle(fontSize: 18),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                "- رسوم الخدمة : " + serviceCost,
+                                style: const TextStyle(
+                                    fontSize: 18, color: Colors.black54),
+                              ),
+                              const Text(
+                                "- يتم دفع الرسوم عن طريق تحويل المبلغ علي أحد الحسابات الاتية والإحتفاظ بصورة لوصل الدفع :",
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black54),
+                              ),
+                              const SizedBox(height: 5),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 40),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "- فودافون كاش : " + phone,
+                                      style: const TextStyle(
+                                          fontSize: 16, color: Colors.black54),
+                                    ),
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      "- رقم الحساب البنكي : " + bankNumber,
+                                      style: const TextStyle(
+                                          fontSize: 16, color: Colors.black54),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         Center(
@@ -278,7 +329,6 @@ class ServiceInformationLayout extends StatelessWidget {
                               ),
                               highlightColor: secondaryColor,
                               splashColor: secondaryColor,
-                              hoverColor: Colors.teal,
                             ),
                           ),
                         ),

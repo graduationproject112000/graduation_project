@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/layouts/edit_phone_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/edit_phone_layout/cubit/states.dart';
-import 'package:graduation_project/layouts/settings_layout/dart/settings_layout.dart';
 
 import '../../../shared/styles/colors.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -35,7 +34,8 @@ class EditPhoneLayout extends StatelessWidget {
                 builder: (context) => AlertDialog(
                   title: const Text(
                     'هل انت متأكد أنك لا تريد تغير رقم الهاتف ؟',
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
                   ),
                   //content: Text('Do you want to leave without saving?'),
                   actions: <Widget>[
@@ -44,21 +44,26 @@ class EditPhoneLayout extends StatelessWidget {
                         Navigator.of(context).pop(false);
                       },
                       child: const Text('لا'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: Colors.red,
                       // color: Colors.red,
                     ),
                     MaterialButton(
                       onPressed: () {
                         cubit.errors.clear();
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return SettingsLayout();
-                            },
-                          ),
-                        );
+                        Navigator.of(context).pop(true);
                       },
                       child: const Text('نعم'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: secondaryColor,
                       // color: mainColor,
                     ),
                   ],

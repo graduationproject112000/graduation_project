@@ -57,15 +57,16 @@ class HomeLayout extends StatelessWidget {
                 ),
                 flexibleSpace: Container(
                   decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF1E88E5),
-                      //secondaryColor,
-                      mainColor,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  )),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFF1E88E5),
+                        //secondaryColor,
+                        mainColor,
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                  ),
                 ),
                 title: Text(
                   cubit.screenTitles[cubit.currentIndex],
@@ -120,6 +121,7 @@ class HomeLayout extends StatelessWidget {
                 unselectedItemColor: Colors.grey,
                 // iconSize: 20,
                 // unselectedFontSize: 5,
+                backgroundColor: Colors.white,
                 selectedItemColor: secondaryColor,
                 currentIndex: cubit.currentIndex,
                 elevation: 20,

@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/layouts/home_layout/cubit/states.dart';
 
+import '../../../models/User_information.dart';
 import '../../../models/union_model.dart';
 import '../../../models/user_order.dart';
 import '../../../screens/home/home_screen/home_screen.dart';
@@ -46,6 +47,17 @@ class HomeCubit extends Cubit<HomeStates> {
     NewsScreen(),
   ];
 
+  UserInformation? userInformation;
+  void getUserInfo() {
+    emit(UserInformationLoadingState());
+    DioHelper.getData(url: 'userInfo', token: token).then((value) {
+      userInformation = UserInformation.fromJson(value.data);
+      emit(UserInformationSuccessState(userInformation: userInformation));
+    }).catchError((error) {
+      emit(UserInformationErrorState());
+    });
+  }
+
   void changeBottomBar(index) {
     currentIndex = index;
     emit(HomeBottomNavigationChangeState());
@@ -82,6 +94,7 @@ class HomeCubit extends Cubit<HomeStates> {
     DioHelper.getData(url: 'services/myservice', token: token).then((value) {
       userOrder = UserOrder.fromJson(value.data);
       emit(GetUserOrdersSuccessUnionState());
+      getUserInfo();
     }).catchError((error) {
       print("get user Order Error " + error.toString());
       emit(GetUserOrdersErrorState());
@@ -101,5 +114,4 @@ class HomeCubit extends Cubit<HomeStates> {
       emit(DeleteUserOrderErrorState());
     });
   }
-
 }

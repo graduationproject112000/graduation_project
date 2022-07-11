@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/layouts/edit_password_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/edit_password_layout/cubit/states.dart';
-import 'package:graduation_project/layouts/settings_layout/dart/settings_layout.dart';
 
 import '../../../shared/styles/colors.dart';
 import '../../../shared/widgets/widgets.dart';
@@ -40,6 +39,7 @@ class EditPasswordLayout extends StatelessWidget {
                   title: const Text(
                     'هل انت متأكد أنك لا تريد تغير كلمة السر ؟',
                     style: TextStyle(fontSize: 15),
+                    textAlign: TextAlign.center,
                   ),
                   //content: Text('Do you want to leave without saving?'),
                   actions: <Widget>[
@@ -48,6 +48,12 @@ class EditPasswordLayout extends StatelessWidget {
                         Navigator.of(context).pop(false);
                       },
                       child: const Text('لا'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: Colors.red,
                       // color: Colors.red,
                     ),
                     MaterialButton(
@@ -56,6 +62,12 @@ class EditPasswordLayout extends StatelessWidget {
                         Navigator.of(context).pop(true);
                       },
                       child: const Text('نعم'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: secondaryColor,
                       // color: mainColor,
                     ),
                   ],

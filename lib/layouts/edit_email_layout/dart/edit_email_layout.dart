@@ -36,6 +36,7 @@ class EditEmailLayout extends StatelessWidget {
                     'هل انت متأكد أنك لا تريد تغير البريد الإلكتروني ؟',
                     textDirection: TextDirection.rtl,
                     style: TextStyle(fontSize: 15),
+                    textAlign: TextAlign.center,
                   ),
                   //content: Text('Do you want to leave without saving?'),
                   actions: <Widget>[
@@ -44,6 +45,12 @@ class EditEmailLayout extends StatelessWidget {
                         Navigator.of(context).pop(false);
                       },
                       child: const Text('لا'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: Colors.red,
                       // color: Colors.red,
                     ),
                     MaterialButton(
@@ -52,6 +59,12 @@ class EditEmailLayout extends StatelessWidget {
                         Navigator.of(context).pop(true);
                       },
                       child: const Text('نعم'),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      textColor: Colors.white,
+                      minWidth: 140,
+                      color: secondaryColor,
                       // color: mainColor,
                     ),
                   ],

@@ -17,8 +17,9 @@ class HomeScreen extends StatelessWidget {
   late String unionName;
   late String serviceId;
   late String serviceCost;
+  late String bankNumber;
+  late String phone;
   var sliderController = CarouselController();
-
 
   Widget buildIndicator(context, index) {
     return Container(
@@ -108,6 +109,16 @@ class HomeScreen extends StatelessWidget {
                                   .serviceCost[index]
                                   .serviceCost
                                   .toString();
+                              bankNumber = HomeCubit.get(context)
+                                  .unionModel
+                                  .data
+                                  .bank
+                                  .toString();
+                              phone = HomeCubit.get(context)
+                                  .unionModel
+                                  .data
+                                  .phone
+                                  .toString();
 
                               Navigator.push(
                                 context,
@@ -115,6 +126,8 @@ class HomeScreen extends StatelessWidget {
                                   builder: (context) =>
                                       ServiceInformationLayout(
                                     title: title,
+                                    phone: phone,
+                                    bankNumber: bankNumber,
                                     description: description,
                                     unionName: unionName,
                                     serviceId: serviceId,
@@ -185,7 +198,7 @@ class HomeScreen extends StatelessWidget {
                         buildIndicator(context, 3),
                       ],
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 20),
                     const Padding(
                       padding: EdgeInsets.only(right: 10),
                       child: Text(

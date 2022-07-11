@@ -1,3 +1,5 @@
+import '../../../models/User_information.dart';
+
 abstract class HomeStates {}
 
 class HomeInitialState extends HomeStates {}
@@ -30,6 +32,9 @@ class DeleteUserOrderErrorState extends HomeStates {}
 
 class UserInformationLoadingState extends HomeStates {}
 
-class UserInformationSuccessState extends HomeStates {}
+class UserInformationSuccessState extends HomeStates {
+  final UserInformation? userInformation;
+  UserInformationSuccessState({required this.userInformation});
+}
 
 class UserInformationErrorState extends HomeStates {}

@@ -104,7 +104,7 @@ class SettingsLayout extends StatelessWidget {
                                   radius: 65,
                                   backgroundColor: Colors.red,
                                   backgroundImage:
-                                      AssetImage('assets/images/person.png'),
+                                      AssetImage('assets/images/profile.gif'),
                                 )
                               ],
                             ),
@@ -132,9 +132,11 @@ class SettingsLayout extends StatelessWidget {
                                     prefix: Icons.email,
                                     isRead: true,
                                     suffix: Icons.edit,
-                                    suffixPressed: () async{
-                                      emailController.text = await Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
+                                    suffixPressed: () async {
+                                      emailController.text =
+                                          await Navigator.push(context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
                                         return EditEmailLayout();
                                       }));
                                     }),
@@ -172,7 +174,8 @@ class SettingsLayout extends StatelessWidget {
                                     isRead: true,
                                     suffix: Icons.edit,
                                     suffixPressed: () async {
-                                      phoneController.text = await Navigator.push(
+                                      phoneController.text =
+                                          await Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) {

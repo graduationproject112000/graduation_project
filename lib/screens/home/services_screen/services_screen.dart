@@ -15,6 +15,8 @@ class ServicesScreen extends StatelessWidget {
   late String unionName;
   late String serviceId;
   late String serviceCost;
+  late String bankNumber;
+  late String phone;
 
   @override
   Widget build(BuildContext context) {
@@ -65,12 +67,24 @@ class ServicesScreen extends StatelessWidget {
                               .serviceCost[index]
                               .serviceCost
                               .toString();
+                          bankNumber = HomeCubit.get(context)
+                              .unionModel
+                              .data
+                              .bank
+                              .toString();
+                          phone = HomeCubit.get(context)
+                              .unionModel
+                              .data
+                              .phone
+                              .toString();
 
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => ServiceInformationLayout(
                                 title: title,
+                                phone: phone,
+                                bankNumber: bankNumber,
                                 description: description,
                                 unionName: unionName,
                                 serviceId: serviceId,

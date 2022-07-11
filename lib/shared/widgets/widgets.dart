@@ -204,26 +204,57 @@ Widget myDrawer(context) {
     builder: (context, state) {
       var cubit = HomeCubit.get(context);
       return Drawer(
-        child: ListView(children: [
+        child: Column(children: [
           Container(
-            height: 200,
-            color: mainColor,
+            width: double.infinity,
+            height: 220,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFF1E88E5),
+                  //secondaryColor,
+                  mainColor,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: Image.asset(
-                    "assets/images/person.png",
-                    height: 75,
-                    width: 75,
-                  ),
+                const SizedBox(height: 20),
+                // ClipRRect(
+                //   borderRadius: BorderRadius.circular(100),
+                //   child: Image.asset(
+                //     "assets/images/profile.gif",
+                //     height: 100,
+                //     width: 100,
+                //   ),
+                // ),
+                const CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Colors.red,
+                  backgroundImage: AssetImage('assets/images/profile.gif'),
                 ),
-                const SizedBox(height: 15),
-                const Text(
-                  "أسم المستخدم",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
+                const SizedBox(height: 10),
+                state is UserInformationLoadingState
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                          strokeWidth: 4,
+                        ),
+                      )
+                    : Text(
+                        HomeCubit.get(context)
+                            .userInformation!
+                            .data!
+                            .name
+                            .toString(),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 20),
+                      ),
               ],
             ),
           ),
@@ -366,7 +397,7 @@ Widget serviceForm({
         onTap: function,
         child: Container(
           padding: const EdgeInsets.all(5),
-          height: 52,
+          height: 57,
           decoration: BoxDecoration(
             border: Border.all(
               width: 1,
@@ -511,7 +542,12 @@ Future<bool> onWillPop(context) async {
           onPressed: () {
             Navigator.of(context).pop(false);
           },
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           child: const Text('لا'),
+          textColor: Colors.white,
+          minWidth: 140,
           color: Colors.red,
         ),
         MaterialButton(
@@ -520,7 +556,12 @@ Future<bool> onWillPop(context) async {
             Navigator.of(context).pop(true);
           },
           child: const Text('نعم'),
-          color: mainColor,
+          color: secondaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          textColor: Colors.white,
+          minWidth: 140,
         ),
       ],
     ),
@@ -582,7 +623,7 @@ Widget buildNewsItem(List<Information> news, index, context) {
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const SizedBox(height: 5),
+                        const SizedBox(height: 10),
                         Row(
                           children: [
                             Icon(
