@@ -5,11 +5,11 @@ import 'package:graduation_project/layouts/edit_password_layout/cubit/cubit.dart
 import 'package:graduation_project/layouts/edit_phone_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/login_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/register_layout/cubit/cubit.dart';
+import 'package:graduation_project/screens/other/on_boarding/on_boarding_screen.dart';
 import 'package:graduation_project/shared/styles/colors.dart';
 
 import 'layouts/home_layout/cubit/cubit.dart';
 import 'layouts/service_information_layout/cubit/cubit.dart';
-import 'layouts/splash_layout/splash_layout.dart';
 import 'layouts/user_information_layout/cubit/cubit.dart';
 import 'shared/constants.dart';
 import 'shared/networks/local/cache_helper.dart';
@@ -45,7 +45,8 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const SplashLayout(),
+        home: OnBoardingScreen(),
+        // const SplashLayout(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'DefaultFont',
