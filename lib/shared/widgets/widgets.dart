@@ -425,10 +425,25 @@ Widget serviceForm({
           ),
         ),
       ),
-      Text(
-        error,
-        style: TextStyle(color: color),
-      ),
+      if (error.isNotEmpty)
+        Row(
+          children: [
+            const Icon(
+              Icons.error,
+              color: Colors.red,
+              size: 15,
+            ),
+            const SizedBox(width: 5),
+            Text(
+              error.toString(),
+              style: const TextStyle(color: Colors.red),
+            ),
+          ],
+        ),
+      // Text(
+      //   error,
+      //   style: TextStyle(color: color),
+      // ),
     ],
   );
 }

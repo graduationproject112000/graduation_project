@@ -4,12 +4,14 @@ import 'package:graduation_project/layouts/edit_email_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/edit_password_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/edit_phone_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/login_layout/cubit/cubit.dart';
-import 'package:graduation_project/layouts/login_layout/dart/login_layout.dart';
 import 'package:graduation_project/layouts/register_layout/cubit/cubit.dart';
 import 'package:graduation_project/screens/other/complaints_screen/cubit/cubit.dart';
+import 'package:graduation_project/screens/other/on_boarding/on_boarding_screen.dart';
 import 'package:graduation_project/shared/styles/colors.dart';
 
 import 'layouts/home_layout/cubit/cubit.dart';
+import 'layouts/home_layout/dart/home_layout.dart';
+import 'layouts/login_layout/dart/login_layout.dart';
 import 'layouts/service_information_layout/cubit/cubit.dart';
 import 'layouts/user_information_layout/cubit/cubit.dart';
 import 'shared/constants.dart';
@@ -23,6 +25,7 @@ void main() async {
 
   token = CacheHelper.getData(key: 'token');
   unionId = CacheHelper.getData(key: 'unionId');
+  onBoarding = CacheHelper.getData(key: "on_boarding");
   print(token);
   runApp(const MyApp());
 }
@@ -47,9 +50,11 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LoginLayout(),
-        // OnBoardingScreen(),
-        // const SplashLayout(),
+        home: onBoarding == null
+            ? OnBoardingScreen()
+            : token == null
+                ? LoginLayout()
+                : HomeLayout(0),
         theme: ThemeData(
           primarySwatch: Colors.blue,
           fontFamily: 'DefaultFont',

@@ -1,2 +1,3 @@
- String? token;
- int? unionId;
+String? token;
+int? unionId;
+bool? onBoarding;

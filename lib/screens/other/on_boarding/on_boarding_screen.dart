@@ -4,6 +4,8 @@ import 'package:graduation_project/layouts/login_layout/dart/login_layout.dart';
 import 'package:graduation_project/shared/styles/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../shared/networks/local/cache_helper.dart';
+
 class BoardingModel {
   final String image;
   final String title;
@@ -48,6 +50,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         actions: [
           TextButton(
             onPressed: () {
+              CacheHelper.saveData(key: "on_boarding", value: true);
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => LoginLayout()));
             },
@@ -108,6 +111,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 FloatingActionButton(
                   onPressed: () {
                     if (isLast == true) {
+                      CacheHelper.saveData(key: "on_boarding", value: true);
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
