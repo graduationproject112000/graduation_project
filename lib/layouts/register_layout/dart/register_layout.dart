@@ -6,7 +6,7 @@ import 'package:graduation_project/layouts/register_layout/cubit/cubit.dart';
 import 'package:graduation_project/layouts/register_layout/cubit/states.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../screens/other/complaints_screen/dart/dart.dart';
+import '../../../screens/other/complaints_screen/dart/complaints_screen.dart';
 import '../../../shared/styles/colors.dart';
 import '../../../shared/widgets/widgets.dart';
 

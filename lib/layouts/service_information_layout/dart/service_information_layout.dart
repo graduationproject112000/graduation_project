@@ -62,7 +62,9 @@ class ServiceInformationLayout extends StatelessWidget {
                           content: Text(
                             state.message,
                             style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500,),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
                             textDirection: TextDirection.rtl,
                           ),
                           actions: <Widget>[
@@ -110,7 +112,7 @@ class ServiceInformationLayout extends StatelessWidget {
                             ),
                             MaterialButton(
                               child: const Text('حذف الطلب'),
-                              color: mainColor,
+                              color: secondaryColor,
                               textColor: Colors.white,
                               minWidth: 140,
                               shape: RoundedRectangleBorder(
