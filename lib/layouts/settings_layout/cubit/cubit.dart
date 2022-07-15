@@ -19,4 +19,17 @@ class SettingCubit extends Cubit<SettingState> {
       emit(UserInformationErrorState());
     });
   }
+
+  void sendEmailVerified() {
+    print("before");
+    emit(EmailVerifiedLoadingState());
+    DioHelper.postData(url: 'email/verification-notification', token: token).then((value) {
+
+      print("success");
+      emit(EmailVerifiedSuccessState());
+    }).catchError((error) {
+      print("error");
+      emit(EmailVerifiedErrorState());
+    });
+  }
 }

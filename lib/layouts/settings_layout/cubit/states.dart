@@ -13,3 +13,12 @@ class UserInformationSuccessState extends SettingState {
 }
 
 class UserInformationErrorState extends SettingState {}
+
+
+
+class EmailVerifiedLoadingState extends SettingState {}
+
+class EmailVerifiedSuccessState extends SettingState {
+}
+
+class EmailVerifiedErrorState extends SettingState {}

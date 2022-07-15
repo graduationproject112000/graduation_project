@@ -54,7 +54,15 @@ class ServiceFormLayout extends StatelessWidget {
                         builder: (context) => HomeLayout(2),
                       ),
                     );
+            }else{
+              ShowToast(
+                text: ServiceFormCubit.get(context).startServiceMessage,
+              );
             }
+          }else if (state is ServiceFormErrorStartServiceState){
+            ShowToast(
+              text: ServiceFormCubit.get(context).startServiceMessage,
+            );
           }
         },
         builder: (context, state) {

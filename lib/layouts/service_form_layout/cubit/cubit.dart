@@ -80,7 +80,6 @@ class ServiceFormCubit extends Cubit<ServiceFormStates> {
   List<int> indexes = [];
 
   void startService(serviceId, url) {
-    print(serviceDBLast.toString());
     for(int i = 0 ; i < serviceDB.length ; i++){
       if (texts[i].contains('image_picker')){
         serviceDBLast[i] = serviceDB[i];
@@ -95,7 +94,6 @@ class ServiceFormCubit extends Cubit<ServiceFormStates> {
         imagesLast.removeAt(i);
       }
     }
-    print(serviceDBLast.toString());
     emit(ServiceFormLoadingStartServiceState());
     DioHelper.uploadImage(
       url: url + serviceId,
@@ -108,7 +106,6 @@ class ServiceFormCubit extends Cubit<ServiceFormStates> {
       }
       emit(ServiceFormSuccessStartServiceState(value.data['status']));
     }).catchError((error) {
-      print("object111111111"+ error.toString());
       emit(ServiceFormErrorStartServiceState());
     });
   }
