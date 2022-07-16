@@ -200,11 +200,11 @@ class ServiceInformationLayout extends StatelessWidget {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 30.0),
+                          padding: const EdgeInsets.only(right: 40),
                           child: Text(
                             "$description",
                             style: const TextStyle(
-                                fontSize: 18, color: Colors.black54),
+                                fontSize: 16, color: Colors.black54),
                           ),
                         ),
                         Container(
@@ -231,11 +231,11 @@ class ServiceInformationLayout extends StatelessWidget {
                         ListView.builder(
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: const EdgeInsets.only(right: 30.0),
+                              padding: const EdgeInsets.only(right: 40.0),
                               child: Text(
                                 "- ${ServiceInformationCubit.get(context).serviceInformation![index]} ",
                                 style: const TextStyle(
-                                    fontSize: 18, color: Colors.black54),
+                                    fontSize: 16, color: Colors.black54),
                               ),
                             );
                           },
@@ -267,7 +267,7 @@ class ServiceInformationLayout extends StatelessWidget {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 30.0),
+                          padding: const EdgeInsets.only(right: 40.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -275,12 +275,12 @@ class ServiceInformationLayout extends StatelessWidget {
                               Text(
                                 "- رسوم الخدمة : " + serviceCost,
                                 style: const TextStyle(
-                                    fontSize: 18, color: Colors.black54),
+                                    fontSize: 16, color: Colors.black54),
                               ),
                               const Text(
                                 "- يتم دفع الرسوم عن طريق تحويل المبلغ علي أحد الحسابات الاتية والإحتفاظ بصورة لوصل الدفع :",
                                 style: TextStyle(
-                                    fontSize: 18, color: Colors.black54),
+                                    fontSize: 16, color: Colors.black54),
                               ),
                               const SizedBox(height: 5),
                               Padding(
@@ -291,13 +291,13 @@ class ServiceInformationLayout extends StatelessWidget {
                                     Text(
                                       "- فودافون كاش : " + phone,
                                       style: const TextStyle(
-                                          fontSize: 16, color: Colors.black54),
+                                          fontSize: 14, color: Colors.black54),
                                     ),
                                     const SizedBox(height: 5),
                                     Text(
                                       "- رقم الحساب البنكي : " + bankNumber,
                                       style: const TextStyle(
-                                          fontSize: 16, color: Colors.black54),
+                                          fontSize: 14, color: Colors.black54),
                                     ),
                                   ],
                                 ),
@@ -305,35 +305,33 @@ class ServiceInformationLayout extends StatelessWidget {
                             ],
                           ),
                         ),
+                        const SizedBox(height: 30),
                         Center(
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(vertical: 30),
-                            width: 150,
-                            child: MaterialButton(
-                              onPressed: () {
-                                print('serviceId' + serviceId);
-                                ServiceInformationCubit.get(context)
-                                    .checkServices(serviceId);
-                              },
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: const Text(
-                                "بدأ الخدمة ",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
+                          child: MaterialButton(
+                            onPressed: () {
+                              print('serviceId' + serviceId);
+                              ServiceInformationCubit.get(context)
+                                  .checkServices(serviceId);
+                            },
+                            minWidth: 150,
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: const Text(
+                              "بدأ الخدمة ",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
                               ),
-                              color: mainColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                side: const BorderSide(width: 1),
-                              ),
-                              highlightColor: secondaryColor,
-                              splashColor: secondaryColor,
                             ),
+                            color: const Color(0xff0B54A1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            highlightColor: secondaryColor,
+                            splashColor: secondaryColor,
                           ),
                         ),
+                        const SizedBox(height: 30),
                       ],
                     ),
                   ),

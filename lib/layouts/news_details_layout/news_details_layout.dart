@@ -54,7 +54,7 @@ class NewsDetailsLayout extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Row(
-              textBaseline: TextBaseline.alphabetic,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Icon(
                   Icons.arrow_left,
@@ -64,57 +64,83 @@ class NewsDetailsLayout extends StatelessWidget {
                   child: Text(
                     title,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w600),
+                        fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              child: Text(
-                description,
-                textAlign: TextAlign.start,
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.grey),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              textBaseline: TextBaseline.alphabetic,
-              children: const [
-                Icon(
-                  Icons.arrow_left,
-                  size: 30,
-                ),
-                Text(
-                  "تاريخ النشر",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              padding: const EdgeInsets.only(right: 35, top: 5, bottom: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(
+                  const Text(
+                    "تاريخ النشر",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black54,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(width: 15),
+                  const Icon(
                     Icons.access_time_rounded,
                     size: 18,
-                    color: Colors.grey[600],
+                    color: Colors.black54,
                   ),
                   const SizedBox(width: 5),
                   Text(
                     date,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.grey[600],
+                        color: Colors.black54,
                         fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(right: 40, left: 5, top: 5),
+              child: Text(
+                description,
+                textAlign: TextAlign.start,
+                style: const TextStyle(fontSize: 15, color: Colors.black54),
+              ),
+            ),
+            const SizedBox(height: 20),
+            // Row(
+            //   textBaseline: TextBaseline.alphabetic,
+            //   children: const [
+            //     Icon(
+            //       Icons.arrow_left,
+            //       size: 30,
+            //     ),
+            //     Text(
+            //       "تاريخ النشر",
+            //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            //     ),
+            //   ],
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.start,
+            //     children: [
+            //       Icon(
+            //         Icons.access_time_rounded,
+            //         size: 18,
+            //         color: Colors.grey[600],
+            //       ),
+            //       const SizedBox(width: 5),
+            //       Text(
+            //         date,
+            //         style: TextStyle(
+            //             fontSize: 16,
+            //             color: Colors.grey[600],
+            //             fontWeight: FontWeight.w500),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ]),
         ),
       ),

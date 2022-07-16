@@ -63,7 +63,7 @@ Widget inputField({
                 hintTextDirection: TextDirection.rtl,
                 hintText: hint,
                 hintStyle: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -390,7 +390,7 @@ Widget serviceForm({
       Text(
         title,
         textAlign: TextAlign.start,
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
       ),
       const SizedBox(height: 10),
       GestureDetector(

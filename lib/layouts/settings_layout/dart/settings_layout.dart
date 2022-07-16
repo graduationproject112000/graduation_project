@@ -28,6 +28,10 @@ class SettingsLayout extends StatelessWidget {
           create: (context) => SettingCubit()..getUserInfo(),
           child: BlocConsumer<SettingCubit, SettingState>(
             listener: (context, state) {
+              if (state is EmailVerifiedSuccessState) {
+                print("success");
+                ShowToast(text: state.message);
+              }
               if (state is UserInformationSuccessState) {
                 name = state.userInformation!.data!.name.toString();
                 phoneController.text =
@@ -37,9 +41,9 @@ class SettingsLayout extends StatelessWidget {
                 numberController.text =
                     state.userInformation!.data!.ssn.toString();
                 passwordController.text = "12345678";
-              }else if (state is EmailVerifiedSuccessState){
-                print("success");
-              }else if (state is EmailVerifiedErrorState){
+              }
+
+              if (state is EmailVerifiedErrorState) {
                 print("error");
               }
             },
@@ -159,15 +163,16 @@ class SettingsLayout extends StatelessWidget {
                                                 style: TextStyle(
                                                     color: Colors.red),
                                               )),
-
-                                              state is EmailVerifiedLoadingState?CircularProgressIndicator():
-                                              TextButton(
-                                                onPressed: () {
-                                                  SettingCubit().sendEmailVerified();
-                                                },
-                                                child:
-                                                    const Text("ارسال الرابط"),
-                                              ),
+                                              state is EmailVerifiedLoadingState
+                                                  ? CircularProgressIndicator()
+                                                  : TextButton(
+                                                      onPressed: () {
+                                                        SettingCubit()
+                                                            .sendEmailVerified();
+                                                      },
+                                                      child: const Text(
+                                                          "ارسال الرابط"),
+                                                    ),
                                             ],
                                           )
                                         : const SizedBox(height: 15)

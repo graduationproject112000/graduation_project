@@ -14,11 +14,12 @@ class UserInformationSuccessState extends SettingState {
 
 class UserInformationErrorState extends SettingState {}
 
-
-
 class EmailVerifiedLoadingState extends SettingState {}
 
 class EmailVerifiedSuccessState extends SettingState {
+  final String message;
+
+  EmailVerifiedSuccessState({required this.message});
 }
 
 class EmailVerifiedErrorState extends SettingState {}
